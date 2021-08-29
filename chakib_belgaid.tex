@@ -1,0 +1,404 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.2, 28 Aug 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{LightBlueTurquois}{HTML}{1CBABC}
+\definecolor{BlueTurquois}{HTML}{0a6a77}
+\colorlet{name}{black}
+\colorlet{tagline}{BlueTurquois}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{BlueTurquois}
+\colorlet{accent}{BlueTurquois}
+\colorlet{emphasis}{SlateGrey} 
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+% \addbibresource{sample.bib}
+
+\setlength{\columnseprule}{0.4pt}
+% \setlength{\columnsep}{3em}
+\begin{document}
+\name{Chakib BELGAID}
+\tagline{PHD Candidate in Computer Science}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \location{Lille , FRANCE}
+  \email{chakib.belgaid@gmail.com}
+  \twitter{@chakib_med}
+  \phone{+(33) 755297214}
+  \homepage{chakib-belgaid.github.io}
+  \linkedin{chakib-belgaid}
+  \github{chakib-belgaid}
+  \mailaddress{1-111 residence Evariste Galois Avenue Paul Langevin, Villeneuve d'Ascq 59650 }
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+  \cvsection{Experience}
+  \medskip
+
+  \cvevent{PHD Researcher   }{  Spirals Team, Inria }{2018 – Present}{Lille, France}
+  \subevent{Energy Measurement}
+  \begin{itemize}
+    \item Proposed a new approach for testing energy consumption of server programs
+    \item Developed a tool to measure energy consumption of Linux Programs
+    \item Developed a library to measure energy consumption of Python code
+    \item Built an extension to measure energy consumption for CI
+    \item Developed a library to spot energy hotspots in Python Programs
+  \end{itemize}
+
+  \subevent{Software optimisation}
+  \begin{itemize}
+    \item Reduced energy consumption of Python Programs up to \textbf{30\%} by selecting the most suitable interpreter and adding JIT compiler
+    \item Proposed a tool to pick the most suitable JVM that reduce energy consumption of JAVA Programs up to \textbf{25\%}
+    \item Reduced energy consumption of JAVA programs up to \textbf{30\%} by adjusting configuration of the Garbage Collector
+  \end{itemize}
+
+  \subevent{Programming Languages}
+  \begin{itemize}
+    \item Developed a framework to benchmark energy consumption of each RPC Protocol
+    \item Studied energy footprints of \textbf{780+} web frameworks in \textbf{40+} programming languages
+  \end{itemize}
+
+  \divider
+  \cvevent{Intern}{LMCS Laboratory}{ 2016 -- 2017}{ALgeirs, Algeria}
+  \begin{itemize}
+    \item Proposed a new learning method based on binary trees
+    \item Developed a platform to track Students' skills Progress (Django )
+    \item Developed a Simulator for Electrical Circuits that include all the basic Components plus modulation System ( JavaScript )
+  \end{itemize}
+  \subevent{Product}
+  \cproduct{Circuit Maze}{Platform to teach fundamentals of electronics to BCs students using gamification approach}{Django,AngularJs,Js}
+  \divider
+
+  \cvevent{Co-founder CTO}{Funecs}{2014 -- 2018}{ALgeirs, Algeria}
+  \begin{itemize}
+    \item 1st Algerian startup for advergames
+    \item Designed the concept and Prototyped 5+ games
+          % \item Developed two full games
+          % \item Sold one Game
+  \end{itemize}
+  \subevent{Products}
+  \cproduct{GetThe7 }{Mobile game to teach math for elementary school pupils }{ Unity3D, C\#}
+  \cproduct{AquaRings }{Mobile game for Ooredoo Algeria }{ Unity3D, C\#}
+
+  \divider
+  \cvevent{Partner }{Ooredoo}{mars 2015 -- 2016}{ALgeirs, Algeria}
+  \begin{itemize}
+    \item Developed a serious game for Ooredoo (the 1st mobile operator in Algeria)
+    \item Brought \textbf{200000} customers to their 3G offer by organizing a mobile game contest around the country
+  \end{itemize}
+
+  \divider
+
+  \cvevent{Microsoft Student Partner }{Microsoft}{2013 -- 2017}{Algeirs, Algeria}
+  \begin{itemize}
+    \item Participated in 15+ devcamps
+    \item Taught university students C\#, and .Net Framework
+  \end{itemize}
+
+  \subevent{Products}
+
+  \cproduct{Renati}{Software for binarisation and cleaning the historical scripts }{WPF, C\#, Matlab DLL}
+
+  \cproduct{Hestia }{
+    Embedded system to make regular house interactive with Cortana commands} { Arduino, WindowsPhone}
+
+
+  % \medskip
+
+  % \cvsection{A Day of My Life}
+
+  % % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+  % % \wheelchart{outer radius}{inner radius}{
+  % % comma-separated list of value/text width/color/detail}
+  % \wheelchart{1.5cm}{0.5cm}{%
+  % 6/8em/accent!30/{Sleep,beautiful sleep},
+  % 3/8em/accent!40/Hopeful novelist by night,
+  % 8/8em/accent!60/Daytime job,
+  % 2/10em/accent/Sports and relaxation,
+  % 5/6em/accent!20/Spending time with family
+  % }
+
+  % use ONLY \newpage if you want to force a page break for
+  % ONLY the current column
+  % \newpage
+
+  % \cvsection{Publications}
+
+  % \nocite{*}
+
+  % \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+  % \divider
+
+  % \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+  % \divider
+
+  % \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+  %% Switch to the right column. This will now automatically move to the second
+  %% page if the content is too long.
+
+
+  \medskip
+
+  \cvsection{Leadership}
+  \medskip
+  \begin{itemize}
+    \item Conducted workshops about .net technology and C\#
+    \item Managed a startup of 7+ employes with 2 interns
+    \item Conducted workshops about continuous integration for highschool teachers
+    \item Taught Parallel programming for master students
+    \item Supervised 4 interns from Bsc to Msc in energy software
+  \end{itemize}
+
+  \switchcolumn
+
+
+  \cvsection{Education}
+
+  \medskip
+
+  \cvevent{Ph.D.\ Computer Science }{University of lille }{2018-Present}{}
+  Thesis title: Green Coding
+
+  \divider
+
+  \cvevent{Engineering \& M.Sc.\ in Computer Sciences}{Ecole National Supperieur d'informatique (ESI)}{2011 -- 2017}{}
+
+
+  \divider
+  \cvevent{Training}{MIT business summer school}{Jun 2015 -- Aug 2015}{}
+  Training about startup creation and management
+
+  \medskip
+
+  % \cvsection{My Life Philosophy}
+
+  % \begin{quote}
+  %   ``Something smart or heartfelt, preferably in one sentence.''
+  % \end{quote}
+
+  %% Yeah I didn't spend too much time making all the
+  %% spacing consistent... sorry. Use \smallskip, \medskip,
+  %% \bigskip, \vspace etc to make adjustments.
+
+
+
+  % \divider
+
+  % \cvsection{Referees}
+
+  % \cvref{Romain Rouvoy}{romain rou}{mailing address}
+  % \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+  % {Address Line 1\\Address line 2}
+
+  % \divider
+
+  % \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+  % {Address Line 1\\Address line 2}
+
+
+  % \switchcolumn
+  \cvsection{Open Source Contributions}
+  % \cvevent{PyRAPL}{\href{https://github.com/powerapi-ng/pyRAPL}{github.com/powerapi-ng/pyRAPL}}{}{}
+  % \begin{itemize}
+  %   \item implementation of the Intel RAPL counters for Python
+  % \end{itemize}
+
+  \divider
+  \cvevent{Pyjoules} {\href{https://github.com/powerapi-ng/pyJoules}{github.com/powerapi-ng/pyJoules}}{}{}
+  \begin{itemize}
+    \item  Python tool to measure energy consumption of Python code (Python)
+  \end{itemize}
+
+  \divider
+  \cvevent{JouleIT} {\href{https://github.com/powerapi-ng/jouleit}{github.com/powerapi-ng/jouleit}}{}{}
+  \begin{itemize}
+    \item  Shell Script to measure energy consumption of different programs (Bash)
+  \end{itemize}
+
+  \divider
+  \cvevent{JRefferal} {\href{https://github.com/chakib-belgaid/jreferral}{github.com/chakib-belgaid/jreferral}}{}{}
+  \begin{itemize}
+    \item  Tool that recommends the most performant or energy saving JVM implementation for java programs (Bash, Python)
+  \end{itemize}
+
+  \divider
+  \cvevent{IJoules} {\href{https://github.com/chakib-belgaid/IJoules}{github.com/chakib-belgaid/IJoules}}{}{}
+  \begin{itemize}
+    \item  Energy measurement tool for MacOS laptops with Intel CPU (Python, C)
+  \end{itemize}
+
+  \divider
+  \cvevent{FrameworkBenchmarks} {\href{https://github.com/chakib-belgaid/FrameworkBenchmarks}{github.com/chakib-belgaid/FrameworkBenchmarks}}{}{}
+  \begin{itemize}
+    \item  Implementation of energy consumption analysis of 780+ web frameworks within 20 different languages
+  \end{itemize}
+
+  \divider
+  \cvevent{Energy\_GHZ} {\href{https://github.com/chakib-belgaid/energy_ghz}{github.com/chakib-belgaid/energy\_ghz}}{}{}
+  \begin{itemize}
+    \item  Adding energy metric to RPC stress engine GHZ \end{itemize}
+  \divider
+  \cvevent{PyInstruments}{\href{https://github.com/chakib-belgaid/pyinstrument}{github.com/chakib-belgaid/pyinstrument}}{}{}
+  \begin{itemize}
+    \item  Library to generate a Flamegraph and spot energy leaks for Python project
+  \end{itemize}
+
+  \medskip
+
+
+  \cvsection{Awards}
+  \medskip
+  \cvachievement{\faTrophy}{Microsoft Imagine Cup}{1st place in Algeria 2015}
+
+  \divider
+
+  \cvachievement{\faTrophy}{National startup competition \href{http://m.ooredoo.dz/Ooredoo/Algerie/autres_finale_programme_t-start}{TStart}}{Final Prize winner, Algeria 2014 }
+
+  \divider
+
+  \cvachievement{\faHeartbeat}{Startup Weekeend }{3rd Place in Startup Weekend,\textbf{Algeirs}, 2014}
+
+
+  % \cvsection{Strengths}
+  % \cvtag{Hard-working}
+  % \cvtag{Eye for detail}\\
+  % \cvtag{Motivator \& Leader}
+
+  % \divider\smallskip
+
+  % \cvtag{C++}
+  % \cvtag{Embedded Systems}\\
+  % \cvtag{Statistical Analysis}
+  \medskip
+
+  \cvsection{Languages}
+
+  \cvskill{English}{4,5}
+  \divider
+
+  \cvskill{French}{4,5}
+  \divider
+
+  \cvskill{Arabic}{5} %% Supports X.5 values.
+
+  \switchcolumn
+  \medskip
+
+
+  \cvsection{International Conferences}
+  % \cvsection{Publications}
+  \medskip
+
+  \begin{itemize}
+    \item  Ournani, Z.,\textbf{Belgaid, M.C.}, Rouvoy, R., Rust, P., Penhoat, J. and Seinturier, L., 2020, April. Taming energy consumption variations in systems benchmarking. In Proceedings of the ACM/SPEC International Conference on Performance Engineering (pp. 36-47).
+          \medskip
+    \item  \textbf{Belgaid, M.C.}, Ournani, Z., Rouvoy, R., Rust, P. and Penhoat, J., 2021, October. Evaluating the Impact of Java Virtual Machines on Energy Consumption. In 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM).
+
+  \end{itemize}
+
+
+\end{paracol}
+
+\end{document}
